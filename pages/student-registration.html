@@ -4,10 +4,13 @@
     <title>Student Registration Page</title>
 </head>
 <body>
+    <!-- STEP 1: Personal Info -->
     <div id="page-register" class="page">
         <h3>Student Registration</h3>
         <p class="sub">Fill in the details below to create your account.</p>
-         <div class="section-divider">Personal Information</div>
+         <div class="step-panel active" id="panel1">
+        <div class="form-grid">
+          <div class="section-divider">Personal Information</div>
         <div class="form-group">
             <label>First Name <span class="req">*</span></label>
             <input type="text" id="firstName" placeholder="Trupti" />
@@ -27,21 +30,25 @@
             <label>Gender <span class="req">*</span></label>
             <select id="gender">
               <option value="">Select gender</option>
-              <option>Male</option><option>Female</option><option>Other</option>
+              <option>Male</option>
+              <option>Female</option>
+              <option>Other</option>
             </select>
             <span class="err-msg" id="err-gender">Please select your gender.</span>
           </div>
           <div class="form-group">
             <label>Phone Number <span class="req">*</span></label>
-            <input type="tel" id="phone" placeholder="+91 98765 43210" maxlength="13" />
+            <input type="tel" id="phone" placeholder="+91 234567890" maxlength="13" />
             <span class="err-msg" id="err-phone">Enter a valid 10-digit number.</span>
           </div>
           <div class="form-group">
             <label>City</label>
             <input type="text" id="city" placeholder="Pune" />
           </div>
+          </div>
+        </div>
           <div class="form-nav">
-          <button class="btn-next" onclick="nextStep(1)">Next: Academic Info →</button>
+          <button class="btn-next" onclick="nextStep(1)">Next</button>
         </div>
     </div>
 </body>
