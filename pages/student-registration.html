@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Student Registration Page</title>
+    <link rel="stylesheet" href="./../css/student-registration.css">
+</head>
+
+<body>
+    <div id="page-register" class="page">
+        <div class="reg-wrap">
+            <div class="reg-right">
+                <h3>Student Registration</h3>
+                <p class="sub">Fill in the details below to create your account.</p>
+
+                 <!-- progress bar -->
+                <div class="progress-bar-wrap">
+                    <div class="progress-bar" id="progressBar"></div>
+                </div>
+
+                <!-- Step indicators -->
+                <div class="steps-bar">
+                    <div class="step-item">
+                        <div class="step-circle active" id="sc1">1</div>
+                        <span class="step-label active" id="sl1">Personal</span>
+                    </div>
+                    <div class="step-line" id="line1"></div>
+                    <div class="step-item">
+                        <div class="step-circle" id="sc2">2</div>
+                        <span class="step-label" id="sl2">Academic</span>
+                    </div>
+                    <div class="step-line" id="line2"></div>
+                    <div class="step-item">
+                        <div class="step-circle" id="sc3">3</div>
+                        <span class="step-label" id="sl3">Account</span>
+                    </div>
+                </div>
+
+                <!-- STEP 1: Personal Info -->
+                <div class="step-panel active" id="panel1">
+                    <div class="form-grid">
+                        <div class="section-divider">Personal Information</div>
+                        <div class="form-group">
+                            <label>First Name <span class="req">*</span></label>
+                            <input type="text" id="firstName" placeholder="Trupti" />
+                            <span class="err-msg" id="err-firstName">Please enter your first name.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Last Name <span class="req">*</span></label>
+                            <input type="text" id="lastName" placeholder="Sharma" />
+                            <span class="err-msg" id="err-lastName">Please enter your last name.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Date of Birth <span class="req">*</span></label>
+                            <input type="date" id="dob" />
+                            <span class="err-msg" id="err-dob">Please select your date of birth.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender <span class="req">*</span></label>
+                            <select id="gender">
+                                <option value="">Select gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Other</option>
+                            </select>
+                            <span class="err-msg" id="err-gender">Please select your gender.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number <span class="req">*</span></label>
+                            <input type="tel" id="phone" placeholder="+91 234567890" maxlength="13" />
+                            <span class="err-msg" id="err-phone">Enter a valid 10-digit number.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>City</label>
+                            <input type="text" id="city" placeholder="Pune" />
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn-next" onclick="nextStep(1)">Next</button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Academic Info -->
+                <div class="step-panel" id="panel2">
+                    <div class="form-grid">
+                        <div class="section-divider">Academic Details</div>
+                        <div class="form-group full">
+                            <label>College / University <span class="req">*</span></label>
+                            <input type="text" id="college" placeholder="Savitribai Phule Pune University" />
+                            <span class="err-msg" id="err-college">Please enter your college name.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Department / Branch <span class="req">*</span></label>
+                            <select id="branch">
+                                <option value="">Select branch</option>
+                                <option>Computer Engineering</option>
+                                <option>Information Technology</option>
+                                <option>Electronics & Telecom</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Civil Engineering</option>
+                                <option>MBA</option>
+                                <option>MCA</option>
+                                <option>Other</option>
+                            </select>
+                            <span class="err-msg" id="err-branch">Please select your branch.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Passing Year <span class="req">*</span></label>
+                            <select id="passYear">
+                                <option value="">Select year</option>
+                                <option>2025</option>
+                                <option>2026</option>
+                                <option>2027</option>
+                            </select>
+                            <span class="err-msg" id="err-passYear">Please select passing year.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Current CGPA <span class="req">*</span></label>
+                            <input type="number" id="cgpa" placeholder="8.5" min="0" max="10" step="0.01" />
+                            <span class="err-msg" id="err-cgpa">Enter CGPA between 0 and 10.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>10th Percentage (%)</label>
+                            <input type="number" id="tenth" placeholder="85" min="0" max="100" />
+                        </div>
+                        <div class="form-group">
+                            <label>12th / Diploma %</label>
+                            <input type="number" id="twelfth" placeholder="78" min="0" max="100" />
+                        </div>
+                        <div class="form-group full">
+                            <label>Key Skills (comma separated)</label>
+                            <input type="text" id="skills" placeholder="Python, React, Java, SQL, Communication" />
+                        </div>
+                        <div class="form-group full">
+                            <label>LinkedIn / GitHub URL</label>
+                            <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourname" />
+                        </div>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn-back" onclick="prevStep(2)">Back</button>
+                        <button class="btn-next" onclick="nextStep(2)">Next</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Account -->
+                <div class="step-panel" id="panel3">
+                    <div class="form-grid">
+                        <div class="section-divider">Account Setup</div>
+                        <div class="form-group full">
+                            <label>College Email <span class="req">*</span></label>
+                            <input type="email" id="email" placeholder="trupti.sharma@college.edu" />
+                            <span class="err-msg" id="err-email">Enter a valid email address.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Password <span class="req">*</span></label>
+                            <input type="password" id="password" placeholder="Min 8 characters" />
+                            <span class="err-msg" id="err-password">Password must be at least 8 characters.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password <span class="req">*</span></label>
+                            <input type="password" id="confirmPass" placeholder="Re-enter password" />
+                            <span class="err-msg" id="err-confirmPass">Passwords do not match.</span>
+                        </div>
+                        <div class="form-group full">
+                            <label>Brief About Yourself</label>
+                            <textarea id="about"
+                                placeholder="I am a final year Computer Engineering student passionate about full-stack development..."></textarea>
+                        </div>
+                        <div class="form-group full" style="flex-direction:row;align-items:flex-start;gap:0.6rem">
+                            <input type="checkbox" id="terms" style="width:auto;margin-top:3px" />
+                            <label for="terms" style="font-weight:400;font-size:0.84rem;color:var(--muted)">
+                                I agree to the <a href="#" style="color:var(--accent)">Terms &amp; Conditions</a> and <a
+                                    href="#" style="color:var(--accent)">Privacy Policy</a>
+                            </label>
+                        </div>
+                        <span class="err-msg" id="err-terms" style="grid-column:1/-1">Please accept the terms to
+                            continue.</span>
+                    </div>
+                    <div class="form-nav">
+                        <button class="btn-back" onclick="prevStep(3)">Back</button>
+                        <button class="btn-submit" onclick="submitForm()">Create Account</button>
+                    </div>
+                </div>
+
+                <!-- SUCCESS -->
+                <div class="success-box" id="successBox">
+                    <div class="success-icon">✅</div>
+                    <h3>You're registered!</h3>
+                    <p>Welcome to Campus Placement Portal. Your profile is live and companies can now find you. Check
+                        your
+                        email to
+                        verify your account.</p>
+                    <button class="btn-primary" onclick="showPage('jobs')">Explore Jobs</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./../js/student-registration.js"></script>
+</body>
+
+</html>

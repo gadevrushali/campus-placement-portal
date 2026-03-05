@@ -10,8 +10,6 @@
 </head>
 <body>
     <main class="main">
-
-  <!-- Topbar -->
   <div class="topbar">
     <div class="greeting">
       <h1 id="greetingName">Welcome 👋</h1>
@@ -22,8 +20,6 @@
       <div class="icon-btn">🔔<span class="notif-dot"></span></div>
     </div>
   </div>
-
-  <!-- Stat Cards -->
   <div class="stats-row">
     <div class="stat-card">
       <div class="stat-icon-wrap" style="background:var(--blue-s)">💼</div>
@@ -50,6 +46,301 @@
       <div class="stat-sub" style="background:var(--green-s);color:var(--green)" id="statOffersub">Keep applying!</div>
     </div>
   </div>
-
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">My Applications</div>
+        <span class="card-link" onclick="openModal('apps')">+ Add →</span>
+      </div>
+      <div id="appsList">
+        <div style="text-align:center;padding:2.5rem 1rem;color:var(--muted2)">
+          <div style="font-size:2rem;margin-bottom:0.5rem">📭</div>
+          <div style="font-size:0.84rem">No applications yet.<br>Click <strong>Edit My Profile</strong> to add.</div>
+        </div>
+      </div>
+    </div>
+    <div class="profile-card">
+      <div class="p-avatar" id="profileAvatar">?</div>
+      <div class="p-name" id="profileName">Your Name</div>
+      <div class="p-sub" id="profileSub">Fill in your profile details</div>
+      <div class="p-tags" id="profileSkills">
+        <span class="ptag" style="opacity:0.4">Python</span>
+        <span class="ptag" style="opacity:0.4">React</span>
+        <span class="ptag" style="opacity:0.4">Java</span>
+      </div>
+      <div class="p-stats">
+        <div class="ps-item">
+          <div class="ps-val" style="color:#60a5fa" id="pStatApps">0</div>
+          <div class="ps-lbl">Applied</div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-val" style="color:#c084fc" id="pStatIntvw">0</div>
+          <div class="ps-lbl">Interviews</div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-val" style="color:#34d399" id="pStatOffers">0</div>
+          <div class="ps-lbl">Offers</div>
+        </div>
+      </div>
+      <div class="pc-head" style="width:100%;text-align:left">
+        <span>Profile Completion</span><span id="pcPct">0%</span>
+      </div>
+      <div class="pc-bar" style="width:100%"><div class="pc-fill" id="pcFill" style="width:0%"></div></div>
+    </div>
+  </div>
+  <div class="grid-3">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Upcoming Drives</div>
+        <span class="card-link">Calendar →</span>
+      </div>
+      <div class="drive-item">
+        <div class="d-date" style="background:var(--blue-s)">
+          <div class="d-day" style="color:var(--blue)">06</div>
+          <div class="d-mon" style="color:var(--blue)">Mar</div>
+        </div>
+        <div class="d-info">
+          <div class="d-title">TCS NQT Drive</div>
+          <div class="d-meta">Aptitude + Technical</div>
+          <div class="d-time">⏰ 10:00 AM · Room 401</div>
+        </div>
+        <button class="reg-btn done">✓ Done</button>
+      </div>
+      <div class="drive-item">
+        <div class="d-date" style="background:var(--violet-s)">
+          <div class="d-day" style="color:var(--violet)">09</div>
+          <div class="d-mon" style="color:var(--violet)">Mar</div>
+        </div>
+        <div class="d-info">
+          <div class="d-title">Infosys InfyTQ</div>
+          <div class="d-meta">Technical + HR</div>
+          <div class="d-time">⏰ 9:00 AM · Online</div>
+        </div>
+        <button class="reg-btn" onclick="this.classList.add('done');this.textContent='✓ Done';toast('Registered for Infosys InfyTQ!')">Register</button>
+      </div>
+      <div class="drive-item">
+        <div class="d-date" style="background:var(--teal-s)">
+          <div class="d-day" style="color:var(--teal)">14</div>
+          <div class="d-mon" style="color:var(--teal)">Mar</div>
+        </div>
+        <div class="d-info">
+          <div class="d-title">Amazon SDE Hiring</div>
+          <div class="d-meta">DSA + System Design</div>
+          <div class="d-time">⏰ 11:00 AM · Hall B</div>
+        </div>
+        <button class="reg-btn" onclick="this.classList.add('done');this.textContent='✓ Done';toast('Registered for Amazon SDE!')">Register</button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Skill Strength</div>
+        <span class="card-link" onclick="openModal('skills')">Edit →</span>
+      </div>
+      <div id="skillsList">
+        <div style="text-align:center;padding:2rem 1rem;color:var(--muted2);font-size:0.83rem">
+          Add your skills in Edit Profile to see them here.
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Academic Overview</div></div>
+      <div class="cgpa-sec">
+        <div class="ring-wrap">
+          <svg width="86" height="86" viewBox="0 0 86 86">
+            <circle cx="43" cy="43" r="35" fill="none" stroke="var(--bg2)" stroke-width="7"/>
+            <circle cx="43" cy="43" r="35" fill="none" stroke="url(#grd)" stroke-width="7"
+              stroke-dasharray="219.91" id="cgpaRing" stroke-dashoffset="219.91" stroke-linecap="round"/>
+            <defs>
+              <linearGradient id="grd" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#2563eb"/>
+                <stop offset="100%" stop-color="#0d9488"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <div class="ring-center">
+            <div class="ring-val" id="ringVal">—</div>
+            <div class="ring-lbl">CGPA</div>
+          </div>
+        </div>
+        <div class="cgpa-rows">
+          <div class="c-row"><span>10th %</span><span id="ac10th" style="color:var(--green)">—</span></div>
+          <div class="c-row"><span>12th %</span><span id="ac12th" style="color:var(--green)">—</span></div>
+          <div class="c-row"><span>CGPA</span><span id="acCgpa" style="color:var(--blue)">—</span></div>
+          <div class="c-row"><span>Backlogs</span><span id="acBacklog" style="color:var(--green)">—</span></div>
+          <div class="c-row"><span>Branch</span><span id="acBranch" style="color:var(--amber)">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Recent Activity</div>
+      </div>
+      <div class="act-item">
+        <div class="act-icon" style="background:var(--blue-s)">🔔</div>
+        <div>
+          <div class="act-text"><strong>TCS NQT Drive</strong> is on March 6 — you're registered!</div>
+          <div class="act-time">Today</div>
+        </div>
+      </div>
+      <div class="act-item">
+        <div class="act-icon" style="background:var(--green-s)">✅</div>
+        <div>
+          <div class="act-text">Dashboard profile <strong>updated</strong> successfully.</div>
+          <div class="act-time" id="lastSaved">Not saved yet</div>
+        </div>
+      </div>
+      <div class="act-item">
+        <div class="act-icon" style="background:var(--amber-s)">💡</div>
+        <div>
+          <div class="act-text">Tip: Complete your profile to get <strong>better job matches</strong>.</div>
+          <div class="act-time">Always visible</div>
+        </div>
+      </div>
+      <div class="act-item">
+        <div class="act-icon" style="background:var(--violet-s)">📄</div>
+        <div>
+          <div class="act-text">Upload your resume to <strong>Resume Vault</strong> for shortlisting.</div>
+          <div class="act-time">Action required</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Placement Journey</div></div>
+      <div class="t-steps">
+        <div class="t-step">
+          <div class="t-dot done" id="tj1">✓</div>
+          <div class="t-info"><div class="t-title">Profile Created</div><div class="t-sub" id="tj1sub">Complete your info</div></div>
+        </div>
+        <div class="t-step">
+          <div class="t-dot pending" id="tj2"></div>
+          <div class="t-info"><div class="t-title" id="tj2title" style="color:var(--muted)">Resume Uploaded</div><div class="t-sub">Upload in Resume Vault</div></div>
+        </div>
+        <div class="t-step">
+          <div class="t-dot pending" id="tj3"></div>
+          <div class="t-info"><div class="t-title" id="tj3title" style="color:var(--muted)">First Application</div><div class="t-sub" id="tj3sub">Apply to your first company</div></div>
+        </div>
+        <div class="t-step">
+          <div class="t-dot pending" id="tj4"></div>
+          <div class="t-info"><div class="t-title" id="tj4title" style="color:var(--muted)">Interview Stage</div><div class="t-sub" id="tj4sub">Get shortlisted</div></div>
+        </div>
+        <div class="t-step">
+          <div class="t-dot pending" id="tj5"></div>
+          <div class="t-info"><div class="t-title" id="tj5title" style="color:var(--muted)">Offer Received</div><div class="t-sub">Your dream job awaits!</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+<div class="modal-overlay" id="modalOverlay" onclick="closeOnBg(event)">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">✏️ Edit My Profile</div>
+      <button class="modal-close" onclick="closeModal()">✕</button>
+    </div>
+    <div class="form-section">Personal Information</div>
+    <div class="form-grid">
+      <div class="form-group">
+        <label>First Name *</label>
+        <input type="text" id="fFirstName" placeholder="Rahul"/>
+      </div>
+      <div class="form-group">
+        <label>Last Name *</label>
+        <input type="text" id="fLastName" placeholder="Sharma"/>
+      </div>
+      <div class="form-group">
+        <label>Phone</label>
+        <input type="tel" id="fPhone" placeholder="+91 98765 43210"/>
+      </div>
+      <div class="form-group">
+        <label>City</label>
+        <input type="text" id="fCity" placeholder="Pune"/>
+      </div>
+    </div>
+    <div class="form-section">Academic Details</div>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>College / University *</label>
+        <input type="text" id="fCollege" placeholder="Savitribai Phule Pune University"/>
+      </div>
+      <div class="form-group">
+        <label>Branch *</label>
+        <select id="fBranch">
+          <option value="">Select branch</option>
+          <option>Computer Engineering</option>
+          <option>Information Technology</option>
+          <option>Electronics & Telecom</option>
+          <option>Mechanical Engineering</option>
+          <option>Civil Engineering</option>
+          <option>MBA</option><option>MCA</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Passing Year</label>
+        <select id="fYear">
+          <option value="">Select year</option>
+          <option>2025</option><option>2026</option><option>2027</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>10th %</label>
+        <input type="number" id="f10th" placeholder="91" min="0" max="100"/>
+      </div>
+      <div class="form-group">
+        <label>12th / Diploma %</label>
+        <input type="number" id="f12th" placeholder="85" min="0" max="100"/>
+      </div>
+      <div class="form-group">
+        <label>Current CGPA</label>
+        <input type="number" id="fCgpa" placeholder="8.6" min="0" max="10" step="0.01"/>
+      </div>
+      <div class="form-group">
+        <label>Active Backlogs</label>
+        <select id="fBacklog">
+          <option value="None">None</option>
+          <option value="1">1</option><option value="2">2</option><option value="3+">3+</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>LinkedIn / GitHub</label>
+        <input type="url" id="fLinkedin" placeholder="https://linkedin.com/in/..."/>
+      </div>
+    </div>
+    <div class="form-section">Skills & Applications</div>
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Skills (comma separated)</label>
+        <input type="text" id="fSkills" placeholder="Python, React, Java, SQL, DSA"/>
+      </div>
+      <div class="form-group">
+        <label>Total Applications</label>
+        <input type="number" id="fApps" placeholder="0" min="0"/>
+      </div>
+      <div class="form-group">
+        <label>Interviews Scheduled</label>
+        <input type="number" id="fInterviews" placeholder="0" min="0"/>
+      </div>
+      <div class="form-group">
+        <label>Offers Received</label>
+        <input type="number" id="fOffers" placeholder="0" min="0"/>
+      </div>
+      <div class="form-group full">
+        <label>Latest Application (e.g. "Software Eng @ TCS · Interview")</label>
+        <input type="text" id="fLatestApp" placeholder="Software Engineer @ TCS · Interview"/>
+      </div>
+      <div class="form-group full">
+        <label>About Yourself</label>
+        <textarea id="fAbout" placeholder="Final year Computer Engineering student passionate about full-stack development…"></textarea>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="saveProfile()">💾 Save Profile</button>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toastEl"></div>
+<script src="../js/student-dashboard.js"></script>
 </body>
 </html>
