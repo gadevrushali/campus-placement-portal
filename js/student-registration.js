@@ -1,5 +1,20 @@
 let currentStep = 1;
 
+function updateStepUI(step) {
+    for (let i = 1; i <= 3; i++) {
+      document.getElementById('panel' + i).classList.toggle('active', i === step);
+      const sc = document.getElementById('sc' + i);
+      const sl = document.getElementById('sl' + i);
+      sc.classList.remove('active', 'done');
+      sl.classList.remove('active');
+      if (i < step) { sc.classList.add('done'); sc.textContent = '✓'; }
+      else if (i === step) { sc.classList.add('active'); sc.textContent = i; sl.classList.add('active'); }
+      else { sc.textContent = i; }
+      if (i < 3) document.getElementById('line' + i).classList.toggle('done', i < step);
+    }
+    document.getElementById('progressBar').style.width = (step === 1 ? 33 : step === 2 ? 66 : 100) + '%';
+  }
+
 function validateStep1() {
     let ok = true;
     const checks = [
