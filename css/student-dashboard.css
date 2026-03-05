@@ -762,3 +762,62 @@ body {
     font-family: 'Clash Display', sans-serif
 }
 
+.cgpa-sec {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem
+}
+
+.ring-wrap {
+    position: relative;
+    flex-shrink: 0
+}
+
+.ring-wrap svg {
+    transform: rotate(-90deg)
+}
+
+.ring-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center
+}
+
+.ring-val {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    font-size: 1.45rem;
+    line-height: 1;
+    color: var(--ink)
+}
+
+.ring-lbl {
+    font-size: 0.6rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em
+}
+
+.cgpa-rows {
+    flex: 1
+}
+
+.c-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.42rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.8rem;
+    color: var(--ink2)
+}
+
+.c-row:last-child {
+    border-bottom: none
+}
+
+.c-row span:last-child {
+    font-weight: 700;
+    font-family: 'Clash Display', sans-serif
+}
