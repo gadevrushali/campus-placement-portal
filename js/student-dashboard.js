@@ -1,4 +1,4 @@
-// ── SKILL COLORS ──
+
 const skillColors = [
     'linear-gradient(90deg,#2563eb,#0d9488)',
     'linear-gradient(90deg,#7c3aed,#a78bfa)',
@@ -10,7 +10,6 @@ const skillColors = [
     'linear-gradient(90deg,#7c3aed,#c084fc)',
 ];
 
-// ── DEFAULT DATA ──
 const DEFAULT = {
     firstName: '', lastName: '', phone: '', city: '',
     college: '', branch: '', year: '', tenth: '', twelfth: '',
@@ -18,18 +17,16 @@ const DEFAULT = {
     apps: '0', interviews: '0', offers: '0', latestApp: '', about: ''
 };
 
-// ── LOAD FROM localStorage ──
+
 function loadData() {
     try { return JSON.parse(localStorage.getItem('campushire_student')) || { ...DEFAULT }; }
     catch { return { ...DEFAULT }; }
 }
 
-// ── SAVE TO localStorage ──
 function saveData(d) {
     localStorage.setItem('campushire_student', JSON.stringify(d));
 }
 
-// ── TOAST ──
 function toast(msg, color = 'var(--green)') {
     const t = document.getElementById('toastEl');
     t.textContent = msg;
@@ -38,19 +35,16 @@ function toast(msg, color = 'var(--green)') {
     setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ── INITIALS ──
 function initials(first, last) {
     return ((first || '?')[0] + (last || '')[0]).toUpperCase() || '?';
 }
 
-// ── PROFILE COMPLETION ──
 function calcCompletion(d) {
     const fields = ['firstName', 'lastName', 'college', 'branch', 'year', 'cgpa', 'tenth', 'twelfth', 'skills', 'apps'];
     const filled = fields.filter(f => d[f] && String(d[f]).trim() !== '' && String(d[f]) !== '0').length;
     return Math.round((filled / fields.length) * 100);
 }
 
-// ── NAVBAR INITIALIZATION ──
 function initNavbar() {
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
@@ -65,7 +59,6 @@ function initNavbar() {
     updateNavbarUser();
 }
 
-// ── UPDATE NAVBAR USER INFO ──
 function updateNavbarUser() {
     const d = loadData();
     const ini = initials(d.firstName, d.lastName);
