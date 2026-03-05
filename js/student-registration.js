@@ -6,3 +6,7 @@ function nextStep(from) {
     currentStep = from + 1;
     updateStepUI(currentStep);
   }
+  function prevStep(from) {
+    currentStep = from - 1;
+    updateStepUI(currentStep);
+  }
