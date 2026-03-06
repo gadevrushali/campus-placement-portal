@@ -5,7 +5,6 @@
       font-family: "Segoe UI", sans-serif;
       flex-wrap: wrap;
     }
-
     body {
       min-height: 100vh;
     background-color:  #ffe4cc;
@@ -46,7 +45,6 @@
       color: black;
       font-size: 17px;
     }
-
     .btn {
       padding: 6px 18px;
       border-radius: 20px;
