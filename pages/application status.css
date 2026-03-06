@@ -1,0 +1,73 @@
+body{
+margin:0;
+font-family:Arial;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+
+background: linear-gradient(135deg,#fc951f,#e2ddd5);
+}
+
+.container{
+text-align:center;
+color:rgb(19, 18, 18);
+}
+
+.subtitle{
+margin-bottom:30px;
+}
+
+.status-card{
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:35px;
+width:350px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+input{
+width:90%;
+padding:12px;
+margin-top:10px;
+margin-bottom:20px;
+border-radius:8px;
+border:none;
+}
+
+button{
+background:#221b1e;
+color:rgb(250, 244, 244);
+border:none;
+padding:12px 25px;
+border-radius:25px;
+cursor:pointer;
+font-size:16px;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+background:#36252c;
+}
+
+#result{
+margin-top:20px;
+font-size:18px;
+font-weight:bold;
+}
+
+.progress{
+margin-top:25px;
+display:flex;
+justify-content:space-between;
+font-size:14px;
+}
+
+.step{
+background:rgb(248, 245, 245);
+color:#333;
+padding:5px 10px;
+border-radius:20px;
+}

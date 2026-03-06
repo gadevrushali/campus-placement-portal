@@ -1,109 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <title>Application Status</title>
-
-<style>
-
-body{
-font-family: Arial, Helvetica, sans-serif;
-background-color:#ec9b9b;
-text-align:center;
-}
-
-.container{
-width:400px;
-margin:80px auto;
-background:white;
-padding:25px;
-border-radius:8px;
-box-shadow:0 0 10px gray;
-}
-
-h2{
-color:#333;
-}
-
-input{
-width:80%;
-padding:8px;
-margin:10px;
-}
-
-button{
-padding:8px 15px;
-background-color:#040a11;
-color:white;
-border:none;
-cursor:pointer;
-}
-
-button:hover{
-background-color:#0056b3;
-}
-
-#result{
-margin: top 20px;
-font-weight:bold;
-}
-
-</style>
-
+<link rel="stylesheet" href="application status.css">
 </head>
 
 <body>
 
 <div class="container">
 
-<h2>Check Application Status</h2>
+<h1>💼 Application Status</h1>
+<p class="subtitle">🌐 Universal Job Portal</p>
 
-<label>Enter Application ID</label><br>
+<div class="status-card">
 
-<input type="text" id="appId" placeholder="Application ID">
+<label>📄 Enter Application ID</label>
 
-<br>
+<input type="text" id="appId" placeholder="Example: UJP101">
 
-<button onclick="checkStatus()">Check Status</button>
+<button onclick="checkStatus()">🔍 Check Status</button>
 
 <div id="result"></div>
 
+<div class="progress">
+<div class="step">📩 Applied</div>
+<div class="step">🕒 Review</div>
+<div class="step">📅 Interview</div>
+<div class="step">🎉 Selected</div>
 </div>
 
-<script>
+</div>
 
-function checkStatus(){
+</div>
 
-var id=document.getElementById("appId").value;
-var result=document.getElementById("result");
-
-if(id==""){
-result.innerHTML="Please enter Application ID";
-result.style.color="red";
-}
-
-else if(id=="101"){
-result.innerHTML="Status: Selected for Interview";
-result.style.color="green";
-}
-
-else if(id=="102"){
-result.innerHTML="Status: Under Review";
-result.style.color="orange";
-}
-
-else if(id=="103"){
-result.innerHTML="Status: Rejected";
-result.style.color="red";
-}
-
-else{
-result.innerHTML="Application ID not found";
-result.style.color="black";
-}
-
-}
-
-</script>
+<script src="application status.js"></script>
 
 </body>
 </html>
