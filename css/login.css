@@ -121,7 +121,7 @@
 
     button[type="submit"] {
       padding: 12px;
-      background: #b08968;
+      background: #a2b068;
       color: white;
       border: none;
       border-radius: 8px;
@@ -154,3 +154,4 @@
         height: auto;
       }
 
+    }
