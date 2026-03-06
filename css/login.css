@@ -26,19 +26,16 @@
       height: 45px;
       margin-right: 10px;
     }
-
     .title {
       font-size: 22px;
       margin-right: auto;
       font-family: "Times New Roman", Times, serif;
     }
-
     .navbar {
       display: flex;
       gap: 25px;
       align-items: center;
     }
-
     .nav-item {
       text-decoration: none;
       color: black;
