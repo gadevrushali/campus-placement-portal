@@ -1,59 +1,281 @@
-body{
-font-family: Arial, sans-serif;
-background:#f2f2f2;
-margin:0;
-padding:0;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#F5F0E8;
+  --bg2:#EDE7D9;
+  --white:#FFFDF8;
+  --border:#DDD3C2;
+  --border2:#C8BB9F;
+  --ink:#1A1208;
+  --ink2:#3D2E18;
+  --muted:#7A6A52;
+  --muted2:#B0A08A;
+  --orange:#E8650A;
+  --orange-deep:#C4500A;
+  --orange-s:#FDF0E6;
+  --amber:#F0A830;
+  --amber-s:#FEF6E0;
+  --green:#2D7A4F;
+  --green-s:#E6F5ED;
+  --teal:#0A8A7A;
+  --teal-s:#E0F5F2;
+  --violet:#6D3AC7;
+  --violet-s:#EDE8FA;
+  --coral:#D63B3B;
+  --coral-s:#FDEAEA;
 }
 
-.contact-container{
-width:400px;
-margin:80px auto;
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0px 0px 10px rgba(0,0,0,0.2);
+html{scroll-behavior:smooth}
+body{font-family:'Bricolage Grotesque',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden}
+::-webkit-scrollbar{width:5px}::-webkit-scrollbar-track{background:var(--bg2)}::-webkit-scrollbar-thumb{background:var(--orange);border-radius:10px}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+/* ── NAVBAR ── */
+.navbar{position:fixed;top:0;left:0;right:0;height:64px;background:rgba(255,253,248,0.94);
+  backdrop-filter:blur(16px);border-bottom:1.5px solid var(--border);z-index:300;
+  display:flex;align-items:center;padding:0 2.5rem;gap:1.5rem}
+.nav-logo{font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.2rem;color:var(--ink);
+  display:flex;align-items:center;gap:0.4rem;cursor:pointer;margin-right:auto;text-decoration:none}
+.nav-logo-dot{width:8px;height:8px;border-radius:50%;background:var(--orange);box-shadow:0 0 8px var(--orange)}
+.nav-links{display:flex;align-items:center;gap:0.1rem}
+.nav-links a{text-decoration:none;font-size:0.85rem;font-weight:500;color:var(--ink2);
+  padding:0.42rem 0.8rem;border-radius:8px;transition:all 0.2s;cursor:pointer}
+.nav-links a:hover,.nav-links a.active{background:var(--orange-s);color:var(--orange);font-weight:600}
+.nav-cta{display:flex;gap:0.5rem;margin-left:0.8rem}
+
+/* ── BUTTONS ── */
+.btn{display:inline-flex;align-items:center;gap:0.4rem;padding:0.5rem 1rem;border-radius:10px;
+  font-size:0.83rem;font-weight:600;cursor:pointer;transition:all 0.2s;text-decoration:none;
+  border:none;font-family:'Bricolage Grotesque',sans-serif}
+.btn-outline{background:transparent;border:1.5px solid var(--border2);color:var(--ink2)}
+.btn-outline:hover{border-color:var(--orange);color:var(--orange)}
+.btn-primary{background:var(--orange);color:#fff;box-shadow:0 3px 12px rgba(232,101,10,0.28)}
+.btn-primary:hover{background:var(--orange-deep);transform:translateY(-1px);box-shadow:0 8px 20px rgba(232,101,10,0.38)}
+.btn-lg{padding:0.72rem 1.7rem;font-size:0.93rem;border-radius:12px}
+
+/* ── SECTION TAG ── */
+.section-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.13em;text-transform:uppercase;
+  color:var(--orange);background:var(--orange-s);padding:0.2rem 0.7rem;border-radius:100px;
+  display:inline-block;margin-bottom:0.7rem;border:1px solid rgba(232,101,10,0.2)}
+
+/* ── FORM ── */
+.form-group{margin-bottom:1rem}
+.form-label{font-size:0.79rem;font-weight:600;color:var(--ink2);margin-bottom:0.38rem;display:block}
+.form-input{width:100%;padding:0.62rem 0.95rem;border:1.5px solid var(--border2);border-radius:10px;
+  font-size:0.87rem;font-family:'Bricolage Grotesque',sans-serif;color:var(--ink);
+  background:var(--white);transition:all 0.2s;outline:none}
+.form-input:focus{border-color:var(--orange);box-shadow:0 0 0 3px rgba(232,101,10,0.1)}
+.form-input::placeholder{color:var(--muted2)}
+select.form-input{cursor:pointer}
+textarea.form-input{resize:vertical;min-height:88px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.err-msg{background:var(--coral-s);color:var(--coral);border-radius:8px;padding:0.62rem 0.95rem;
+  font-size:0.82rem;margin-bottom:0.9rem;display:none;border:1px solid rgba(214,59,59,0.2)}
+
+/* ── PAGE WRAP ── */
+.page-wrap{padding-top:64px;min-height:100vh}
+
+
+
+/* Hero banner — was blue gradient, now orange-black */
+.contact-hero-banner{
+  background:linear-gradient(135deg,var(--ink),#2C1A08);
+  padding:2.8rem 3rem;text-align:center;
+  position:relative;overflow:hidden
+}
+.contact-hero-banner::before{
+  content:'';position:absolute;top:-80px;right:-80px;
+  width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,101,10,0.18),transparent 70%)
+}
+.contact-hero-banner::after{
+  content:'';position:absolute;bottom:-60px;left:-60px;
+  width:240px;height:240px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,168,48,0.12),transparent 70%)
+}
+.contact-hero-banner .section-tag{
+  background:rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.75);
+  border-color:rgba(255,255,255,0.15);
+  position:relative;z-index:1
+}
+.contact-hero-banner h1{
+  font-family:'Clash Display',sans-serif;font-weight:700;
+  font-size:2rem;color:#fff;letter-spacing:-0.03em;
+  margin-bottom:0.4rem;position:relative;z-index:1
+}
+.contact-hero-banner p{
+  color:rgba(255,255,255,0.45);font-size:0.88rem;
+  position:relative;z-index:1
 }
 
-h2{
-text-align:center;
-margin-bottom:20px;
+/* Contact layout — original 2-col grid */
+.contact-layout{
+  display:grid;grid-template-columns:1fr 1.4fr;
+  gap:3rem;max-width:960px;margin:0 auto;
+  padding:3rem 2rem 2.5rem
 }
 
-label{
-font-weight:bold;
+/* Contact info items — original structure */
+.ci-item{display:flex;align-items:flex-start;gap:0.95rem;margin-bottom:1.4rem}
+.ci-icon{
+  width:42px;height:42px;border-radius:11px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;flex-shrink:0
+}
+.ci-label{
+  font-size:0.72rem;font-weight:700;letter-spacing:0.08em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:0.18rem
+}
+.ci-val{font-size:0.86rem;font-weight:600;color:var(--ink)}
+.ci-sub{font-size:0.74rem;color:var(--muted);margin-top:0.08rem}
+
+/* FAQ — original structure */
+.faq-item{
+  border-bottom:1.5px solid var(--border);
+  padding:1rem 0;cursor:pointer
+}
+.faq-item:last-child{border-bottom:none}
+.faq-q{
+  font-size:0.88rem;font-weight:600;
+  display:flex;align-items:center;justify-content:space-between;gap:0.5rem;
+  color:var(--ink)
+}
+.faq-q:hover{color:var(--orange)}
+.faq-a{
+  font-size:0.82rem;color:var(--muted);
+  line-height:1.7;margin-top:0.55rem;display:none
+}
+.faq-item.open .faq-a{display:block}
+.faq-chevron{transition:transform 0.2s;font-size:0.73rem;flex-shrink:0;color:var(--muted2)}
+.faq-item.open .faq-chevron{transform:rotate(180deg);color:var(--orange)}
+.faq-item.open .faq-q{color:var(--orange)}
+
+/* Contact form card — original structure */
+.contact-card{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:19px;padding:2rem;
+  box-shadow:0 12px 40px rgba(26,18,8,0.07);
+  animation:fadeUp 0.5s ease both
+}
+.contact-card-title{
+  font-family:'Clash Display',sans-serif;font-weight:700;
+  font-size:1.25rem;margin-bottom:0.25rem;color:var(--ink)
+}
+.contact-card-sub{font-size:0.81rem;color:var(--muted);margin-bottom:1.6rem}
+
+/* Submit button */
+.submit-btn{
+  width:100%;display:flex;align-items:center;justify-content:center;
+  padding:0.72rem;font-size:0.9rem;font-weight:700;
+  background:var(--orange);color:#fff;border:none;border-radius:12px;
+  cursor:pointer;transition:all 0.22s;
+  font-family:'Bricolage Grotesque',sans-serif;
+  box-shadow:0 4px 14px rgba(232,101,10,0.3)
+}
+.submit-btn:hover{
+  background:var(--orange-deep);transform:translateY(-1px);
+  box-shadow:0 8px 22px rgba(232,101,10,0.4)
 }
 
-input, textarea{
-width:100%;
-padding:10px;
-margin-top:5px;
-margin-bottom:15px;
-border:1px solid #ccc;
-border-radius:5px;
+/* ══ MAP ══ */
+.map-section{
+  max-width:960px;margin:0 auto;
+  padding:0 2rem 3rem
 }
-
-textarea{
-height:100px;
-resize:none;
+.map-wrap{
+  border-radius:18px;overflow:hidden;
+  border:1.5px solid var(--border);
+  box-shadow:0 10px 36px rgba(26,18,8,0.08);
+  position:relative
 }
-
-button{
-width:100%;
-padding:10px;
-background:#007BFF;
-color:white;
-border:none;
-border-radius:5px;
-font-size:16px;
-cursor:pointer;
+.map-wrap iframe{
+  width:100%;height:380px;display:block;border:none;
+  filter:saturate(0.65) sepia(0.12)
 }
-
-button:hover{
-background:#0056b3;
+.map-overlay-card{
+  position:absolute;top:1rem;left:1rem;
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:12px;padding:0.85rem 1rem;
+  box-shadow:0 6px 22px rgba(26,18,8,0.12);
+  max-width:200px;z-index:10
 }
+.map-overlay-card .mo-name{
+  font-family:'Clash Display',sans-serif;font-weight:700;
+  font-size:0.88rem;color:var(--ink);margin-bottom:0.15rem
+}
+.map-overlay-card .mo-addr{font-size:0.72rem;color:var(--muted);line-height:1.5}
+.map-overlay-card .mo-badge{
+  display:inline-block;font-size:0.63rem;font-weight:700;
+  background:var(--orange-s);color:var(--orange);
+  border:1px solid rgba(232,101,10,0.22);
+  padding:0.15rem 0.5rem;border-radius:100px;margin-top:0.4rem
+}
+.map-dir-row{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0.85rem;margin-top:1rem
+}
+.map-dir-card{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:12px;padding:0.9rem 1rem;
+  display:flex;align-items:center;gap:0.7rem;
+  transition:all 0.2s
+}
+.map-dir-card:hover{
+  border-color:var(--orange);
+  box-shadow:0 5px 16px rgba(26,18,8,0.07);
+  transform:translateY(-2px)
+}
+.map-dir-icon{
+  width:36px;height:36px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0
+}
+.map-dir-title{font-size:0.8rem;font-weight:600;color:var(--ink)}
+.map-dir-sub{font-size:0.7rem;color:var(--muted);margin-top:0.06rem}
 
-.success{
-color:green;
-text-align:center;
-margin-top:10px;
+/* Success screen */
+.success-screen{text-align:center;padding:2rem 1rem;display:none;animation:fadeUp 0.4s ease both}
+.success-icon{font-size:3.5rem;margin-bottom:0.9rem}
+.success-title{font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.6rem;margin-bottom:0.4rem;color:var(--ink)}
+.success-sub{font-size:0.88rem;color:var(--muted);margin-bottom:1.8rem;line-height:1.7}
+
+/* ══ FOOTER ══ */
+.footer{background:var(--ink);color:rgba(255,255,255,0.42);padding:3.5rem 3rem 2rem}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2.5rem}
+.footer-brand{font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;
+  display:flex;align-items:center;gap:0.4rem;margin-bottom:0.7rem}
+.footer-desc{font-size:0.81rem;line-height:1.7;color:rgba(255,255,255,0.35)}
+.footer-col-title{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:rgba(255,255,255,0.25);margin-bottom:0.8rem}
+.footer-col a{display:block;font-size:0.82rem;color:rgba(255,255,255,0.4);cursor:pointer;
+  margin-bottom:0.45rem;transition:color 0.2s;text-decoration:none}
+.footer-col a:hover{color:var(--orange)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.08);padding-top:1.3rem;
+  display:flex;align-items:center;justify-content:space-between;font-size:0.78rem}
+
+/* TOAST */
+.toast-box{position:fixed;bottom:1.5rem;right:1.5rem;z-index:9999;display:flex;flex-direction:column;gap:0.5rem}
+.toast{background:var(--ink);color:#fff;padding:0.72rem 1.1rem;border-radius:10px;font-size:0.83rem;
+  font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,0.2);animation:fadeUp 0.3s ease;
+  display:flex;align-items:center;gap:0.5rem;min-width:220px;border-left:3px solid var(--orange)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .contact-layout{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr 1fr}
+  .map-dir-row{grid-template-columns:1fr 1fr}
+  .map-overlay-card{display:none}
+}
+@media(max-width:600px){
+  .navbar{padding:0 1rem}
+  .nav-links{display:none}
+  .contact-hero-banner{padding:2.2rem 1.2rem}
+  .contact-layout{padding:2rem 1.2rem}
+  .map-section{padding:0 1.2rem 2.5rem}
+  .footer{padding:2.5rem 1rem 1.5rem}
+  .footer-inner{grid-template-columns:1fr}
+  .map-dir-row{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
 }

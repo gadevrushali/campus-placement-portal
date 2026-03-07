@@ -1,40 +1,241 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>University Placement - Contact</title>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CampusHire – Contact Us</title>
 
-<link rel="stylesheet" href="../css/contact.css">
-
+<link rel="stylesheet" href="../css/contact.css"/>
 <script src="../js/contact.js"></script>
 
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
 
 </head>
-
 <body>
 
-<div class="contact-container">
+<!-- NAVBAR -->
+<nav class="navbar">
+  <span class="nav-logo"><span class="nav-logo-dot"></span>CampusHire</span>
+  <div class="nav-links">
+    <a href="#">Home</a>
+    <a href="#">Jobs</a>
+    <a href="#">Applications</a>
+    <a href="#">Dashboard</a>
+    <a href="#">About</a>
+    <a class="active" href="#">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <button class="btn btn-outline">Login</button>
+    <button class="btn btn-primary">Register Free</button>
+  </div>
+</nav>
 
-<h2>Contact Placement Cell</h2>
+<div class="page-wrap">
 
-<form id="contactForm">
+  <!-- HERO BANNER -->
+  <div class="contact-hero-banner">
+    <div class="section-tag">Get in Touch</div>
+    <h1>We'd Love to Hear From You</h1>
+    <p>Students, recruiters, or colleges — reach out anytime</p>
+  </div>
 
-<label>Name</label>
-<input type="text" id="name" placeholder="Enter your name">
+  <!-- CONTACT LAYOUT (original 2-col) -->
+  <div class="contact-layout">
 
-<label>Email</label>
-<input type="email" id="email" placeholder="Enter your email">
+    <!-- LEFT: Info + FAQ -->
+    <div>
+      <h2 style="font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.7rem;letter-spacing:-0.03em;margin-bottom:0.7rem;color:var(--ink)">Let's Talk</h2>
+      <p style="font-size:0.88rem;color:var(--muted);line-height:1.8;margin-bottom:1.8rem">Have a question or partnership idea? Our team typically responds within 24 hours.</p>
 
-<label>Message</label>
-<textarea id="message" placeholder="Enter your message"></textarea>
+      <!-- Contact Info Items -->
+      <div class="ci-item">
+        <div class="ci-icon" style="background:var(--orange-s)">📧</div>
+        <div>
+          <div class="ci-label">Email</div>
+          <div class="ci-val">hello@campushire.com</div>
+          <div class="ci-sub">For general inquiries</div>
+        </div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-icon" style="background:var(--amber-s)">📞</div>
+        <div>
+          <div class="ci-label">Phone</div>
+          <div class="ci-val">+91 98765 43210</div>
+          <div class="ci-sub">Mon–Fri, 10am–6pm IST</div>
+        </div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-icon" style="background:var(--bg2)">📍</div>
+        <div>
+          <div class="ci-label">Office</div>
+          <div class="ci-val">BKC, Mumbai 400051</div>
+          <div class="ci-sub">Maharashtra, India</div>
+        </div>
+      </div>
+      <div class="ci-item">
+        <div class="ci-icon" style="background:var(--green-s)">💬</div>
+        <div>
+          <div class="ci-label">WhatsApp Support</div>
+          <div class="ci-val">+91 99887 76655</div>
+          <div class="ci-sub">For urgent student queries</div>
+        </div>
+      </div>
 
-<button type="submit">Send Message</button>
+      <!-- FAQ -->
+      <h3 style="font-family:'Clash Display',sans-serif;font-weight:600;font-size:1.05rem;margin:2rem 0 1rem;color:var(--ink)">Frequently Asked</h3>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Is CampusHire free for students? <span class="faq-chevron">▼</span></div>
+        <div class="faq-a">Yes! CampusHire is 100% free for all students. We charge hiring companies, not you.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">How do I add my college? <span class="faq-chevron">▼</span></div>
+        <div class="faq-a">Fill this form and select "College Partnership" as the subject. We'll reply within 2 business days.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">Can I apply from any college? <span class="faq-chevron">▼</span></div>
+        <div class="faq-a">Absolutely. CampusHire is open to students from any college across India. No exclusions.</div>
+      </div>
+      <div class="faq-item" onclick="this.classList.toggle('open')">
+        <div class="faq-q">How do companies post jobs? <span class="faq-chevron">▼</span></div>
+        <div class="faq-a">Companies sign up as recruiters and post directly. All listings are verified before going live.</div>
+      </div>
+    </div>
 
-</form>
+    <!-- RIGHT: Contact Form Card -->
+    <div class="contact-card">
+      <!-- Form view -->
+      <div id="formView">
+        <div class="contact-card-title">Send a Message</div>
+        <p class="contact-card-sub">We reply within 24 hours on business days</p>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name *</label>
+            <input type="text" id="cFN" class="form-input" placeholder="Priya"/>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name *</label>
+            <input type="text" id="cLN" class="form-input" placeholder="Sharma"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address *</label>
+          <input type="email" id="cEmail" class="form-input" placeholder="priya@example.com"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Mobile Number</label>
+          <input type="tel" id="cPhone" class="form-input" placeholder="+91 9876543210"/>
+        </div>
+        <div class="form-group">
+          <label class="form-label">I am a...</label>
+          <select id="cType" class="form-input">
+            <option>Student</option>
+            <option>Recruiter / HR</option>
+            <option>College Placement Officer</option>
+            <option>Press / Media</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject *</label>
+          <select id="cSubject" class="form-input">
+            <option>General Inquiry</option>
+            <option>Technical Support</option>
+            <option>College Partnership</option>
+            <option>Recruiter Onboarding</option>
+            <option>Report a Bug</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Your Message *</label>
+          <textarea id="cMessage" class="form-input" placeholder="Tell us how we can help..."></textarea>
+        </div>
+        <div id="cErr" class="err-msg"></div>
+        <button class="submit-btn" onclick="sendMessage()">📨 Send Message</button>
+      </div>
 
-<p id="msg" class="success"></p>
+      <!-- Success view -->
+      <div class="success-screen" id="successView">
+        <div class="success-icon">✅</div>
+        <div class="success-title">Message Sent!</div>
+        <p class="success-sub">Thanks for reaching out. We'll reply to your email within 24 hours on business days.</p>
+        <button class="btn btn-primary btn-lg" onclick="resetForm()">Send Another →</button>
+      </div>
+    </div>
 
-</div>
+  </div><!-- /.contact-layout -->
 
+  <!-- MAP SECTION -->
+  <div class="map-section">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;flex-wrap:wrap;gap:0.7rem">
+      <div>
+        <h2 style="font-family:'Clash Display',sans-serif;font-weight:700;font-size:1.35rem;color:var(--ink);letter-spacing:-0.02em">Find Us</h2>
+        <p style="font-size:0.82rem;color:var(--muted);margin-top:0.15rem">Bandra Kurla Complex, Mumbai's business hub</p>
+      </div>
+      <a href="https://www.google.com/maps/search/Bandra+Kurla+Complex+Mumbai" target="_blank" class="btn btn-outline">🗺 Open in Google Maps</a>
+    </div>
+    <div class="map-wrap">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=72.8550%2C19.0560%2C72.8750%2C19.0720&layer=mapnik&marker=19.0640%2C72.8656"
+        title="CampusHire Office — BKC Mumbai"
+        allowfullscreen loading="lazy">
+      </iframe>
+      <div class="map-overlay-card">
+        <div class="mo-name">📍 CampusHire HQ</div>
+        <div class="mo-addr">G-Block, Bandra Kurla Complex<br/>Mumbai 400051</div>
+        <div class="mo-badge">🏢 Head Office</div>
+      </div>
+    </div>
+    <div class="map-dir-row">
+      <div class="map-dir-card">
+        <div class="map-dir-icon" style="background:var(--orange-s)">🚇</div>
+        <div><div class="map-dir-title">By Metro</div><div class="map-dir-sub">BKC Station · 3 min walk</div></div>
+      </div>
+      <div class="map-dir-card">
+        <div class="map-dir-icon" style="background:var(--amber-s)">🚌</div>
+        <div><div class="map-dir-title">By Bus</div><div class="map-dir-sub">BEST routes 312, 314</div></div>
+      </div>
+      <div class="map-dir-card">
+        <div class="map-dir-icon" style="background:var(--green-s)">🚗</div>
+        <div><div class="map-dir-title">By Car / Cab</div><div class="map-dir-sub">Parking at Gate 3</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand"><span class="nav-logo-dot" style="animation:none"></span>CampusHire</div>
+        <p class="footer-desc">India's leading campus placement platform connecting students to top recruiters.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Platform</div>
+        <a href="#">Browse Jobs</a>
+        <a href="#">Track Applications</a>
+        <a href="#">Dashboard</a>
+        <a href="#">Register</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Company</div>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Support</div>
+        <a href="#">Help Center</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 CampusHire. All rights reserved.</span>
+      <span>Made with ❤️ for Indian students</span>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrap -->
+
+<div class="toast-box" id="toastBox"></div>
 
 
 </body>
