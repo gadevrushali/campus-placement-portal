@@ -177,3 +177,108 @@ function showToast(msg) {
 }
 
 document.addEventListener('DOMContentLoaded', () => renderStatusApps());
+
+let applications = JSON.parse(localStorage.getItem("applications")) || [];
+
+let list = document.getElementById("statusAppsList");
+
+function renderStatusApps(){
+
+if(!list) return;
+
+list.innerHTML="";
+
+applications.forEach((app,index)=>{
+
+let card = document.createElement("div");
+
+card.style.background="white";
+card.style.padding="15px";
+card.style.marginBottom="10px";
+card.style.borderRadius="10px";
+
+card.innerHTML = `
+<h3>${app.title}</h3>
+<p><b>Company:</b> ${app.company}</p>
+<p><b>CTC:</b> ${app.ctc}</p>
+<p><b>Status:</b> ${app.status}</p>
+`;
+
+list.appendChild(card);
+
+});
+
+updateStats();
+
+}
+
+function addApplication(){
+
+let title=document.getElementById("addTitle").value;
+let company=document.getElementById("addCo").value;
+let ctc=document.getElementById("addCtc").value;
+let status=document.getElementById("addStatus").value;
+
+if(title=="" || company==""){
+alert("Please fill required fields");
+return;
+}
+
+let newApp={
+title:title,
+company:company,
+ctc:ctc,
+status:status
+};
+
+applications.push(newApp);
+
+localStorage.setItem("applications",JSON.stringify(applications));
+
+closeAddModal();
+
+renderStatusApps();
+
+}
+
+function updateStats(){
+
+let applied=0;
+let review=0;
+let interview=0;
+let offer=0;
+let rejected=0;
+
+applications.forEach(app=>{
+
+if(app.status==="Applied") applied++;
+if(app.status==="In Review") review++;
+if(app.status==="Interview") interview++;
+if(app.status==="Offered") offer++;
+if(app.status==="Rejected") rejected++;
+
+});
+
+document.getElementById("pc-applied").textContent=applied;
+document.getElementById("pc-review").textContent=review;
+document.getElementById("pc-interview").textContent=interview;
+document.getElementById("pc-offer").textContent=offer;
+document.getElementById("pc-rejected").textContent=rejected;
+
+document.getElementById("st-total").textContent=applications.length;
+document.getElementById("st-review").textContent=review;
+document.getElementById("st-interview").textContent=interview;
+document.getElementById("st-offer").textContent=offer;
+document.getElementById("st-rejected").textContent=rejected;
+
+}
+
+function openAddModal(){
+document.getElementById("modalOverlay").classList.remove("hidden");
+}
+
+function closeAddModal(){
+document.getElementById("modalOverlay").classList.add("hidden");
+}
+
+renderStatusApps();
