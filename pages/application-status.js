@@ -1,90 +1,60 @@
-const defaultApps=[
-{id:1,title:'Software Engineer',co:'Google',icon:'🔍',status:'Interview',ctc:'₹28 LPA'},
-{id:2,title:'Frontend Developer',co:'Flipkart',icon:'🛒',status:'Applied',ctc:'₹18 LPA'},
-{id:3,title:'Data Analyst',co:'Deloitte',icon:'📊',status:'Offered',ctc:'₹12 LPA'}
-];
 
-let statusTab="all";
+document.addEventListener("DOMContentLoaded", function () {
 
-function getApps(){
-return JSON.parse(localStorage.getItem("apps")||"[]").length?
-JSON.parse(localStorage.getItem("apps")):
-defaultApps;
-}
+    console.log("CampusHire Application Page Loaded 🚀");
 
-function saveApps(apps){
-localStorage.setItem("apps",JSON.stringify(apps));
-}
+    const addBtn = document.querySelector(".add");
+    const modal = document.getElementById("applicationModal");
+    const closeBtn = document.querySelector(".close");
+    const form = document.getElementById("appForm");
+    const cards = document.querySelectorAll(".card");
 
-function renderStatusApps(){
 
-const apps=getApps();
-const list=document.getElementById("statusAppsList");
+    if(addBtn){
+        addBtn.addEventListener("click", function(){
+            modal.style.display = "flex";
+        });
+    }
 
-list.innerHTML=apps.map(a=>`
 
-<div class="app-row">
+    if(closeBtn){
+        closeBtn.addEventListener("click", function(){
+            modal.style.display = "none";
+        });
+    }
 
-<div>
-<b>${a.icon} ${a.title}</b>
-<br>
-${a.co} • ${a.ctc}
-<br>
-Status: ${a.status}
-</div>
+    window.addEventListener("click", function(e){
+        if(e.target === modal){
+            modal.style.display = "none";
+        }
+    });
 
-<div>
-<button onclick="removeApp(${a.id})">Remove</button>
-</div>
 
-</div>
+    if(form){
+        form.addEventListener("submit", function(e){
 
-`).join("");
+            e.preventDefault();
 
-}
+            alert("Application Added Successfully 🎉");
 
-function removeApp(id){
+            modal.style.display = "none";
 
-let apps=getApps();
-apps=apps.filter(a=>a.id!==id);
-saveApps(apps);
-renderStatusApps();
+            form.reset();
 
-}
+        });
+    }
 
-function openAddModal(){
-document.getElementById("modalOverlay").classList.remove("hidden");
-}
+    cards.forEach(card => {
 
-function closeAddModal(){
-document.getElementById("modalOverlay").classList.add("hidden");
-}
+        card.addEventListener("mouseenter", () => {
+            card.style.boxShadow = "0 10px 25px rgba(0,0,0,0.4)";
+        });
 
-function addApplication(){
+        card.addEventListener("mouseleave", () => {
+            card.style.boxShadow = "none";
+        });
 
-const title=document.getElementById("addTitle").value;
-const co=document.getElementById("addCo").value;
-const ctc=document.getElementById("addCtc").value;
-const status=document.getElementById("addStatus").value;
-const icon=document.getElementById("addIcon").value||"💼";
+    });
 
-let apps=getApps();
-
-apps.push({
-id:Date.now(),
-title,
-co,
-ctc,
-status,
-icon
 });
 
-saveApps(apps);
-
-closeAddModal();
-
-renderStatusApps();
-
-}
-
-document.addEventListener("DOMContentLoaded",renderStatusApps);

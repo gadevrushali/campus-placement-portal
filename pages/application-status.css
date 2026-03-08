@@ -1,114 +1,243 @@
 body{
-font-family:'Bricolage Grotesque',sans-serif;
-background:#F5F0E8;
+font-family:Poppins;
 margin:0;
+background:linear-gradient(120deg,#1e293b,#0f172a);
+color:white;
 }
+
 
 .navbar{
 display:flex;
 justify-content:space-between;
-padding:15px 40px;
-background:white;
-border-bottom:1px solid #ddd;
+align-items:center;
+padding:15px 60px;
+background:rgba(231, 192, 133, 0.05);
+backdrop-filter:blur(10px);
 }
 
-.nav-logo{
-font-weight:700;
-font-size:20px;
+.logo{
+font-size:22px;
+font-weight:600;
+color:#ff5a3c;
 }
 
-.nav-links a{
-margin:0 10px;
-text-decoration:none;
-color:#333;
+.menu{
+display:flex;
+gap:30px;
+list-style:none;
 }
 
-.btn{
-padding:8px 16px;
-border:none;
+.menu li{
 cursor:pointer;
-border-radius:8px;
+opacity:0.8;
 }
 
-.btn-primary{
-background:#E8650A;
-color:white;
-}
-
-.page-wrap{
-padding-top:20px;
-}
-
-.status-hero{
-background:#1A1208;
-color:white;
-padding:40px;
-}
-
-.pipeline-row{
-display:flex;
-background:white;
-margin:30px;
-border-radius:10px;
-overflow:hidden;
-}
-
-.pipe-stage{
-flex:1;
-padding:15px;
-text-align:center;
-border-right:1px solid #eee;
-}
-
-.search-bar{
-display:flex;
-border:1px solid #ddd;
-padding:6px 10px;
-border-radius:8px;
-background:white;
-}
-
-.search-bar input{
+.nav-btn button{
+padding:8px 15px;
 border:none;
-outline:none;
+border-radius:5px;
+margin-left:10px;
+cursor:pointer;
 }
 
-.app-row{
-background:white;
-margin:15px 30px;
-padding:15px;
-border-radius:10px;
+.login{
+background:transparent;
+border:1px solid white;
+color:white;
+}
+
+.register{
+background:#ff5a3c;
+color:white;
+}
+
+
+.header{
+padding:70px 80px;
+}
+
+.header h1{
+font-size:36px;
+}
+
+.header p{
+opacity:0.7;
+}
+
+.add{
+margin-top:15px;
+padding:10px 20px;
+background:#ff5a3c;
+border:none;
+border-radius:5px;
+color:white;
+cursor:pointer;
+}
+
+
+.stats{
 display:flex;
-justify-content:space-between;
+justify-content:space-around;
+padding:20px 60px;
 }
 
-.modal-overlay{
+.stat{
+background:rgba(255,255,255,0.05);
+padding:20px;
+width:120px;
+text-align:center;
+border-radius:10px;
+backdrop-filter:blur(5px);
+}
+
+.stat h2{
+color:#ff5a3c;
+margin:0;
+}
+
+
+.applications{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+padding:40px 70px;
+}
+
+.card{
+background:rgba(255,255,255,0.06);
+padding:25px;
+border-radius:12px;
+backdrop-filter:blur(8px);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.company{
+opacity:0.7;
+}
+
+.badge{
+display:inline-block;
+margin-top:10px;
+padding:4px 12px;
+border-radius:20px;
+font-size:12px;
+}
+
+.review{
+background:#f59e0b;
+}
+
+.interview{
+background:#3b82f6;
+}
+
+.progress{
+height:6px;
+background:#1f2937;
+border-radius:10px;
+margin:15px 0;
+}
+
+.bar{
+width:60%;
+height:6px;
+background:#f59e0b;
+border-radius:10px;
+}
+
+.bar2{
+width:80%;
+height:6px;
+background:#3b82f6;
+border-radius:10px;
+}
+
+.date{
+font-size:12px;
+opacity:0.7;
+}
+
+
+.modal{
+display:none;
 position:fixed;
 top:0;
 left:0;
-right:0;
-bottom:0;
-background:rgba(0,0,0,0.5);
-display:flex;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
 justify-content:center;
 align-items:center;
+z-index:1000;
 }
 
-.hidden{
-display:none;
-}
-
-.modal{
-background:white;
-padding:20px;
+.modal-content{
+background:#0f172a;
+padding:30px;
 border-radius:12px;
-width:300px;
+width:90%;
+max-width:400px;
+color:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.5);
 }
 
-.toast{
-background:black;
-color:white;
+.modal-content h2{
+margin-top:0;
+}
+
+.modal-content label{
+display:block;
+margin-top:15px;
+font-size:14px;
+}
+
+.modal-content input,
+.modal-content select{
+width:100%;
 padding:10px;
-margin:10px;
-border-radius:8px;
+margin-top:5px;
+border:none;
+border-radius:6px;
+background:#1f2937;
+color:white;
+}
+
+.submit-btn{
+margin-top:20px;
+width:100%;
+padding:10px;
+background:#ff5a3c;
+border:none;
+border-radius:6px;
+color:white;
+font-size:16px;
+cursor:pointer;
+}
+
+.close{
+float:right;
+font-size:20px;
+cursor:pointer;
+}
+
+
+@media(max-width:600px){
+
+.header{
+padding:40px 20px;
+}
+
+.stats{
+flex-wrap:wrap;
+gap:10px;
+}
+
+.applications{
+padding:20px;
+}
+
 }
