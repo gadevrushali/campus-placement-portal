@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CampusHire Jobs</title>
 <link rel="stylesheet" href="../css/job-listing.css">
-<link rel="stylesheet" href="../js/job-listing.js"> 
 </head>
 <body>
 
@@ -28,109 +27,23 @@
   </div>
 </nav>
 
-<!-- Search -->
 <div class="search-section">
-    <input type="text" placeholder="Search by role, company or skill...">
 
-    <div class="filters">
-        <button class="active">All</button>
-        <button>IT</button>
-        <button>Finance</button>
-        <button>Core</button>
-    </div>
-</div>
+<input type="text" id="searchInput" placeholder="Search jobs">
 
-<!-- Jobs -->
-<section class="jobs-container">
+<div class="filters">
 
-<div class="job-card">
-<h3>Software Engineer</h3>
-<p class="company">Google</p>
+<button class="filter active" data-category="all">All</button>
+<button class="filter" data-category="it">IT</button>
+<button class="filter" data-category="finance">Finance</button>
+<button class="filter" data-category="core">Core</button>
 
-<div class="tags">
-<span>Bangalore</span>
-<span>Batch 2025</span>
-</div>
-
-<div class="skills">
-<span>DSA</span>
-<span>System Design</span>
-<span>Python</span>
-</div>
-
-<div class="job-footer">
-<h4>₹24 LPA</h4>
-<button>Apply Now</button>
 </div>
 </div>
-
-
-<div class="job-card">
-<h3>Investment Banking Analyst</h3>
-<p class="company">Goldman Sachs</p>
-
-<div class="tags">
-<span>Mumbai</span>
-<span>Batch 2025</span>
-</div>
-
-<div class="skills">
-<span>Financial Modelling</span>
-<span>Excel</span>
-<span>Valuation</span>
-</div>
-
-<div class="job-footer">
-<h4>₹18 LPA</h4>
-<button>Apply Now</button>
-</div>
-</div>
-
-
-<div class="job-card">
-<h3>Mechanical Design Engineer</h3>
-<p class="company">Tata Motors</p>
-
-<div class="tags">
-<span>Pune</span>
-<span>Batch 2025</span>
-</div>
-
-<div class="skills">
-<span>CAD</span>
-<span>SolidWorks</span>
-<span>FEA</span>
-</div>
-
-<div class="job-footer">
-<h4>₹9 LPA</h4>
-<button>Apply Now</button>
-</div>
-</div>
-
-
-<div class="job-card">
-<h3>Data Scientist</h3>
-<p class="company">Microsoft</p>
-
-<div class="tags">
-<span>Hyderabad</span>
-<span>Batch 2025</span>
-</div>
-
-<div class="skills">
-<span>ML</span>
-<span>Python</span>
-<span>SQL</span>
-</div>
-
-<div class="job-footer">
-<h4>₹22 LPA</h4>
-<button>Apply Now</button>
-</div>
-</div>
-
+<script src="../js/job-listing.js"></script>
+<section class="jobs-container" id="jobsContainer">
 </section>
+
 <footer class="footer">
   <div class="footer-inner">
     <div>

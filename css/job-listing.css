@@ -226,7 +226,6 @@ body {
     border-radius: 10px
 }
 
-
 *{
 margin:0;
 padding:0;
@@ -264,18 +263,15 @@ margin:0 15px;
 text-decoration:none;
 }
 
-nav a.active{
-color:orange;
-}
-
 .register-btn{
 background:orange;
 border:none;
-padding:10px 18px;
-color:white;
+padding:8px 15px;
 border-radius:6px;
+color:white;
 cursor:pointer;
 }
+
 
 /* Search */
 
@@ -283,19 +279,19 @@ cursor:pointer;
 padding:30px 60px;
 }
 
-.search-section input{
-width:70%;
-padding:12px;
-border-radius:8px;
+#searchInput{
+width:60%;
+padding:10px;
 border:1px solid #ccc;
+border-radius:6px;
 }
 
 .filters{
 margin-top:15px;
 }
 
-.filters button{
-padding:8px 16px;
+.filter{
+padding:7px 15px;
 margin-right:10px;
 border:none;
 background:#eee;
@@ -303,12 +299,13 @@ border-radius:6px;
 cursor:pointer;
 }
 
-.filters .active{
+.filter.active{
 background:orange;
 color:white;
 }
 
-/* Jobs Grid */
+
+/* Jobs */
 
 .jobs-container{
 display:grid;
@@ -320,19 +317,23 @@ padding:20px 60px;
 .job-card{
 background:white;
 padding:20px;
-border-radius:12px;
-box-shadow:0 3px 8px rgba(0,0,0,0.1);
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.company-logo{
+width:40px;
+margin-bottom:10px;
 }
 
 .company{
 color:gray;
-margin-bottom:10px;
 }
 
 .tags span{
 background:#eee;
-padding:4px 10px;
-border-radius:5px;
+padding:3px 8px;
+border-radius:4px;
 margin-right:5px;
 font-size:12px;
 }
@@ -342,12 +343,12 @@ margin:10px 0;
 }
 
 .skills span{
-background:#ffe5d0;
+background:#ffe5cc;
 color:#ff6600;
-padding:4px 8px;
-border-radius:5px;
-font-size:12px;
+padding:3px 6px;
+border-radius:4px;
 margin-right:5px;
+font-size:12px;
 }
 
 .job-footer{
@@ -361,11 +362,10 @@ margin-top:10px;
 background:#0a0f2c;
 color:white;
 border:none;
-padding:8px 12px;
+padding:6px 12px;
 border-radius:6px;
 cursor:pointer;
 }
-
 
 * FOOTER CSS */:root {
     --ink: #1A1208;
