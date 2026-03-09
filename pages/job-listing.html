@@ -4,23 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CampusHire Jobs</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../css/job-listing.css">
+<link rel="stylesheet" href="../js/job-listing.js"> 
 </head>
 <body>
 
 <!-- Navbar -->
-<header class="navbar">
-    <div class="logo">Campus<span>Hire</span></div>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#" class="active">Jobs</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Login</a>
-    </nav>
-
-    <button class="register-btn">Register</button>
-</header>
+<nav class="navbar">
+  <a class="nav-logo" href="#">
+    <span class="nav-logo-dot"></span>CampusHire
+  </a>
+  <div class="nav-links">
+    <a href="../index.html">Home</a>
+    <a href="../pages/job-listing.html">Jobs</a>
+    <a class="active" href="../pages/Application-status.html">Applications</a>
+    <a href="../pages/student-dashboard.html">Dashboard</a>
+    <a href="../pages/about.html">About</a>
+    <a href="../pages/contact.html">Contact</a>
+  </div>
+  <div class="nav-cta">
+    <button class="btn btn-outline"><a href="../pages/login.html">Login</a></button>
+    <button class="btn btn-primary"><a href="../pages/register.html">Register Free</a></button>
+  </div>
+</nav>
 
 <!-- Search -->
 <div class="search-section">
@@ -125,6 +131,38 @@
 </div>
 
 </section>
-
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">
+        <span class="footer-brand-dot"></span>CampusHire
+      </div>
+      <p class="footer-desc">India's leading campus placement platform connecting students to top recruiters.</p>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Platform</div>
+      <a href="../pages/job-listing.html">Browse Jobs</a>
+      <a href="../pages/Application-status.html">Applications</a>
+      <a href="../pages/student-dashboard.html">Dashboard</a>
+      <a href="../pages/student-registration.html">Register</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Company</div>
+      <a href="../pages/about.html">About Us</a>
+      <a href="../pages/contact.html">Contact</a>
+      <a href="../pages/student-registration.html">register</a>
+    </div>
+    <div class="footer-col">
+      <div class="footer-col-title">Support</div>
+      <a href="https://www.instagram.com/?hl=en">Instagram</a>
+      <a href="https://www.facebook.com/">facebook</a>
+      <a href="https://x.com/">Twitter</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 CampusHire. All rights reserved.</span>
+    <span>Made with ❤️ for Indian students</span>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,3 +1,232 @@
+   ══════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+:root {
+    /* Cream */
+    --cream: #F5F0E8;
+    --cream2: #EDE7D9;
+    --cream3: #E2D9C8;
+    --white: #FFFDF8;
+    /* Black */
+    --ink: #1A1208;
+    --ink2: #3D2E18;
+    --muted: #7A6A52;
+    --muted2: #B0A08A;
+    /* Orange */
+    --orange: #E8650A;
+    --orange-deep: #C4500A;
+    --orange-s: #FDF0E6;
+    --orange-mid: #F28A3C;
+    --amber: #F0A830;
+    --amber-s: #FEF6E0;
+    /* Status colors */
+    --green: #2D7A4F;
+    --green-s: #E6F5ED;
+    --violet: #6D3AC7;
+    --violet-s: #EDE8FA;
+    --coral: #D63B3B;
+    --coral-s: #FDEAEA;
+    --border: #DDD3C2;
+    --border2: #C8BB9F;
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden
+}
+
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    background: var(--cream2)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--orange);
+    border-radius: 10px
+}
+
+/* ══════ NAVBAR ══════ */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 64px;
+    background: rgba(255, 253, 248, 0.96);
+    backdrop-filter: blur(18px);
+    border-bottom: 1.5px solid var(--border);
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    padding: 0 2.5rem;
+    gap: 1.5rem
+}
+
+.nav-logo {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    cursor: pointer;
+    margin-right: auto;
+    text-decoration: none
+}
+
+.nav-logo-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--orange);
+    box-shadow: 0 0 8px var(--orange)
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--ink2);
+    padding: 0.42rem 0.8rem;
+    border-radius: 8px;
+    transition: all 0.2s;
+    cursor: pointer
+}
+
+.nav-links a:hover {
+    background: var(--orange-s);
+    color: var(--orange)
+}
+
+.nav-links a.active {
+    background: var(--orange-s);
+    color: var(--orange);
+    font-weight: 600
+}
+
+.nav-cta {
+    display: flex;
+    gap: 0.5rem;
+    margin-left: 0.8rem
+}
+
+/* ══════ BUTTONS ══════ */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    font-size: 0.83rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    border: none;
+    font-family: 'Bricolage Grotesque', sans-serif
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid var(--border2);
+    color: var(--ink2)
+}
+
+.btn-outline:hover {
+    border-color: var(--orange);
+    color: var(--orange)
+}
+
+.btn-primary {
+    background: var(--orange);
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(232, 101, 10, 0.28)
+}
+
+.btn-primary:hover {
+    background: var(--orange-deep);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(232, 101, 10, 0.38)
+}
+
+.btn-dark {
+    background: var(--ink);
+    color: #fff
+}
+
+.btn-dark:hover {
+    background: var(--ink2);
+    transform: translateY(-1px)
+}
+
+.btn-lg {
+    padding: 0.72rem 1.7rem;
+    font-size: 0.93rem;
+    border-radius: 12px
+}
+
+.btn-sm {
+    padding: 0.32rem 0.75rem;
+    font-size: 0.76rem;
+    border-radius: 7px
+}
+
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    min-height: 100vh;
+    overflow-x: hidden
+}
+
+::-webkit-scrollbar {
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    background: var(--border)
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 10px
+}
+
+
 *{
 margin:0;
 padding:0;
@@ -135,4 +364,97 @@ border:none;
 padding:8px 12px;
 border-radius:6px;
 cursor:pointer;
+}
+
+
+* FOOTER CSS */:root {
+    --ink: #1A1208;
+    --orange: #E8650A;
+    --border: #DDD3C2;
+}
+
+.footer {
+    background: var(--ink);
+    color: rgba(203, 186, 186, 0.38);
+    padding: 2.8rem 2rem 1.8rem;
+    font-family: 'Bricolage Grotesque', sans-serif
+}
+
+.footer-inner {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto 2rem
+}
+
+.footer-brand {
+    font-family: 'Clash Display', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.6rem
+}
+
+.footer-brand-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--orange)
+}
+
+.footer-desc {
+    font-size: 0.79rem;
+    line-height: 1.7;
+    color: rgba(224, 188, 188, 0.3)
+}
+
+.footer-col-title {
+    font-size: 0.64rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(174, 150, 150, 0.22);
+    margin-bottom: 0.7rem
+}
+
+.footer-col a {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(170, 141, 141, 0.36);
+    margin-bottom: 0.4rem;
+    transition: color 0.18s;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.footer-col a:hover {
+    color: var(--orange)
+}
+
+.footer-bottom {
+    max-width: 900px;
+    margin: 0 auto;
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+    padding-top: 1.1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    flex-wrap: wrap;
+    gap: 0.4rem
+}
+
+@media(max-width:700px) {
+    .footer-inner {
+        grid-template-columns: 1fr 1fr
+    }
+}
+
+@media(max-width:450px) {
+    .footer-inner {
+        grid-template-columns: 1fr
+    }
 }
