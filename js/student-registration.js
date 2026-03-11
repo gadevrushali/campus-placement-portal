@@ -146,3 +146,78 @@ alert("Registration Successful!");
 window.location.href="student-dashboard.html";
 
 }
+
+let currentStep = 1;
+
+function nextStep(step) {
+
+  if(step === 1){
+    let first = document.getElementById("firstName").value;
+    let last = document.getElementById("lastName").value;
+
+    if(first === "" || last === ""){
+      alert("Please fill personal details");
+      return;
+    }
+  }
+
+  if(step === 2){
+    let college = document.getElementById("college").value;
+
+    if(college === ""){
+      alert("Please fill academic details");
+      return;
+    }
+  }
+
+  document.getElementById("panel"+step).classList.remove("active");
+  document.getElementById("panel"+(step+1)).classList.add("active");
+
+  currentStep++;
+}
+
+function prevStep(step){
+
+  document.getElementById("panel"+step).classList.remove("active");
+  document.getElementById("panel"+(step-1)).classList.add("active");
+
+  currentStep--;
+}
+
+
+function registerStudent(){
+
+  let first = document.getElementById("firstName").value;
+  let last = document.getElementById("lastName").value;
+  let phone = document.getElementById("phone").value;
+  let city = document.getElementById("city").value;
+
+  let college = document.getElementById("college").value;
+  let branch = document.getElementById("branch").value;
+  let cgpa = document.getElementById("cgpa").value;
+
+  let email = document.getElementById("email").value;
+
+  if(first=="" || email==""){
+    alert("Please fill required fields");
+    return;
+  }
+
+  let studentData = {
+    firstName:first,
+    lastName:last,
+    phone:phone,
+    city:city,
+    college:college,
+    branch:branch,
+    cgpa:cgpa,
+    email:email
+  };
+
+  localStorage.setItem("studentData", JSON.stringify(studentData));
+
+  alert("Registration Successful!");
+
+  window.location.href="../pages/student-dashboard.html";
+
+}

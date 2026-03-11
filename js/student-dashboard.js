@@ -334,3 +334,31 @@ document.getElementById("studentEmail").innerText = student.email;
 document.getElementById("studentCourse").innerText = student.course;
 
 }
+
+window.onload = function(){
+
+  let data = localStorage.getItem("studentData");
+
+  if(data){
+
+    let student = JSON.parse(data);
+
+    let name = student.firstName + " " + student.lastName;
+
+    document.getElementById("greetingName").innerHTML = "Welcome " + student.firstName + " 👋";
+
+    document.getElementById("profileName").innerHTML = name;
+
+    document.getElementById("profileSub").innerHTML = student.branch + " | " + student.college;
+
+    document.getElementById("statCgpa").innerHTML = student.cgpa;
+
+    document.getElementById("acCgpa").innerHTML = student.cgpa;
+
+    document.getElementById("acBranch").innerHTML = student.branch;
+
+    document.getElementById("profileAvatar").innerHTML = student.firstName.charAt(0);
+
+  }
+
+}
