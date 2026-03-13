@@ -220,7 +220,7 @@ transition: box-shadow 0.2s
 background:white;
 padding:20px;
 border-radius:10px;
-box-shadow:0 2px 10px rgba(213, 91, 15, 0.1);
+box-shadow:0 2px 10px rgba(214, 95, 20, 0.1);
 }
 
 .company{
@@ -254,13 +254,6 @@ cursor:pointer;
 
 /* footer */
 
-.footer{
-background:#0b0b1a;
-color:white;
-text-align:center;
-padding:15px;
-}
-
 * FOOTER CSS */:root {
     --ink: #1A1208;
     --orange: #E8650A;
@@ -269,7 +262,7 @@ padding:15px;
 
 .footer {
     background: var(--ink);
-    color: rgba(203, 186, 186, 0.38);
+    color: white;
     padding: 2.8rem 2rem 1.8rem;
     font-family: 'Bricolage Grotesque', sans-serif
 }
@@ -303,7 +296,7 @@ padding:15px;
 .footer-desc {
     font-size: 0.79rem;
     line-height: 1.7;
-    color: rgba(224, 188, 188, 0.3)
+    color: white;
 }
 
 .footer-col-title {
@@ -311,14 +304,14 @@ padding:15px;
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(174, 150, 150, 0.22);
+    color:white;
     margin-bottom: 0.7rem
 }
 
 .footer-col a {
     display: block;
     font-size: 0.8rem;
-    color: rgba(170, 141, 141, 0.36);
+    color: white;
     margin-bottom: 0.4rem;
     transition: color 0.18s;
     text-decoration: none;

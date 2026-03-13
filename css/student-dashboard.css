@@ -1245,7 +1245,7 @@ form-section {
 
 .footer {
     background: var(--ink);
-    color: rgba(203, 186, 186, 0.38);
+    color: white;
     padding: 2.8rem 2rem 1.8rem;
     font-family: 'Bricolage Grotesque', sans-serif
 }
@@ -1279,7 +1279,7 @@ form-section {
 .footer-desc {
     font-size: 0.79rem;
     line-height: 1.7;
-    color: rgba(224, 188, 188, 0.3)
+    color: white;
 }
 
 .footer-col-title {
@@ -1287,14 +1287,14 @@ form-section {
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(174, 150, 150, 0.22);
+    color:white;
     margin-bottom: 0.7rem
 }
 
 .footer-col a {
     display: block;
     font-size: 0.8rem;
-    color: rgba(170, 141, 141, 0.36);
+    color: white;
     margin-bottom: 0.4rem;
     transition: color 0.18s;
     text-decoration: none;

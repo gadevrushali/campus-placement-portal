@@ -451,15 +451,14 @@ body {
 * FOOTER CSS */:root {
     --ink: #1A1208;
     --orange: #E8650A;
-    --border: #090909;
-    color: rgba(26, 25, 25, 0.07);
-    color: #000;
+    --border: #DDD3C2;
 }
 
 .footer {
     background: var(--ink);
-    color: rgb(16, 15, 15)2.8rem 2rem 1.8rem;
-    font-family: 'Bricolage Grotesque', sans-serif;
+    color: white;
+    padding: 2.8rem 2rem 1.8rem;
+    font-family: 'Bricolage Grotesque', sans-serif
 }
 
 .footer-inner {
@@ -474,7 +473,7 @@ body {
     font-family: 'Clash Display', sans-serif;
     font-weight: 700;
     font-size: 1.05rem;
-    color: #000000;
+    color: #fff;
     display: flex;
     align-items: center;
     gap: 0.4rem;
@@ -491,7 +490,7 @@ body {
 .footer-desc {
     font-size: 0.79rem;
     line-height: 1.7;
-    color: rgba(0, 0, 0, 0.3)
+    color: white;
 }
 
 .footer-col-title {
@@ -499,14 +498,14 @@ body {
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: rgba(0, 0, 0, 0.22);
+    color:white;
     margin-bottom: 0.7rem
 }
 
 .footer-col a {
     display: block;
     font-size: 0.8rem;
-    color: rgba(0, 0, 0, 0.36);
+    color: white;
     margin-bottom: 0.4rem;
     transition: color 0.18s;
     text-decoration: none;
