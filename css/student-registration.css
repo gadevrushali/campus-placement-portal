@@ -711,8 +711,8 @@ textarea {
 @media (max-width: 900px) {
   nav {
     padding: 1rem 1.5rem;
+    
   }
-
   .nav-links {
     display: none;
   }
@@ -730,7 +730,7 @@ textarea {
   }
 
   footer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+        text-align: center;
+
   }
 }

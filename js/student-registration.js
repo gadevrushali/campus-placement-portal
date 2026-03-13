@@ -129,20 +129,55 @@ document.querySelectorAll('.nav-links a,.mobile-menu a').forEach(function(a){
 
 function registerStudent(){
 
-let name = document.getElementById("name").value;
-let email = document.getElementById("email").value;
-let course = document.getElementById("course").value;
+  // Personal Details
+  let firstName = document.getElementById("firstName").value;
+  let lastName = document.getElementById("lastName").value;
+  let dob = document.getElementById("dob").value;
+  let gender = document.getElementById("gender").value;
+  let phone = document.getElementById("phone").value;
+  let city = document.getElementById("city").value;
 
-let student = {
-name:name,
-email:email,
-course:course
-};
+  // Academic Details
+  let college = document.getElementById("college").value;
+  let branch = document.getElementById("branch").value;
+  let passYear = document.getElementById("passYear").value;
+  let cgpa = document.getElementById("cgpa").value;
+  let tenth = document.getElementById("tenth").value;
+  let twelfth = document.getElementById("twelfth").value;
+  let skills = document.getElementById("skills").value;
+  let linkedin = document.getElementById("linkedin").value;
 
-localStorage.setItem("studentData", JSON.stringify(student));
+  // Account Details
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let about = document.getElementById("about").value;
 
-alert("Registration Successful!");
+  // Create student object
+  let studentData = {
+    firstName:firstName,
+    lastName:lastName,
+    dob:dob,
+    gender:gender,
+    phone:phone,
+    city:city,
+    college:college,
+    branch:branch,
+    passYear:passYear,
+    cgpa:cgpa,
+    tenth:tenth,
+    twelfth:twelfth,
+    skills:skills,
+    linkedin:linkedin,
+    email:email,
+    password:password,
+    about:about
+  };
 
-window.location.href="student-dashboard.html";
+  // Save to Local Storage
+  localStorage.setItem("studentData", JSON.stringify(studentData));
 
+  alert("Registration Successful!");
+
+  // Redirect to dashboard
+  window.location.href = "student-dashboard.html";
 }
